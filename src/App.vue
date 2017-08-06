@@ -1,16 +1,32 @@
-<template>
-  <div id="app">
-    <router-view></router-view>
-  </div>
+<template lang="pug">
+  #app
+    .mui-container-fluid.admin__container
+      .mui-row
+        h2.admin__header.mui-col-md-12 Панель редактора
+      .mui-row
+        LeftSidebar
+        .mui-col-md-8
+          router-view
+        RightSidebar
 </template>
 
 <script>
-export default {
-  name: 'app'
+  import Articles from '@/blocks/Articles'
+  import Category from '@/blocks/Category'
+  import LeftSidebar from '@/blocks/LeftSidebar'
+  import RightSidebar from '@/blocks/RightSidebar'
+  export default {
+    name: 'app',
+    components: {
+      Articles,
+      Category,
+      LeftSidebar,
+      RightSidebar
+    }
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
